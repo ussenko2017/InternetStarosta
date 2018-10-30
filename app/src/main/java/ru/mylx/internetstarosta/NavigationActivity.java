@@ -1,5 +1,6 @@
 package ru.mylx.internetstarosta;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -28,7 +29,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 private FirebaseAuth mAuth;
-NullFragment nullFragment;
+AccFragment accFragment;
+    FragmentTransaction ftrans;
     private FirebaseAuth.AuthStateListener mStateListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,10 @@ NullFragment nullFragment;
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        accFragment = new AccFragment();
+        reload_menu();
+
+
     }
 
     @Override
@@ -112,10 +118,13 @@ NullFragment nullFragment;
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        ftrans = getFragmentManager().beginTransaction();
+
+
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            ftrans.replace(R.id.container, accFragment);
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -127,6 +136,7 @@ NullFragment nullFragment;
         } else if (id == R.id.nav_send) {
 
         }
+        ftrans.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -137,5 +147,10 @@ NullFragment nullFragment;
     protected void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mStateListener);
+    }
+    public void reload_menu() {
+        ftrans = getFragmentManager().beginTransaction();
+        ftrans.replace(R.id.container, accFragment);
+        ftrans.commit();
     }
 }
