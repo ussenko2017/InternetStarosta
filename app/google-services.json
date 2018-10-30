@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "450440181506",
+    "firebase_url": "https://internetstarosta.firebaseio.com",
+    "project_id": "internetstarosta",
+    "storage_bucket": "internetstarosta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450440181506:android:8bc064a88fad0f7d",
+        "android_client_info": {
+          "package_name": "ru.mylx.internetstarosta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450440181506-53b2b4rrr1riv186j283ippkn19ru01d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.mylx.internetstarosta",
+            "certificate_hash": "d282e1438e1493281e2a68e9b91c316f34e71249"
+          }
+        },
+        {
+          "client_id": "450440181506-i8b3p2pg004p1g7uibhbkclctj51vkmm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZRiR2hn2gJLnNm-Pu2__FoWgV3UX0a7E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450440181506-i8b3p2pg004p1g7uibhbkclctj51vkmm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
